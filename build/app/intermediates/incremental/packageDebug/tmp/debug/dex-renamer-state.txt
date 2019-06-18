@@ -1,0 +1,4 @@
+#Tue Jun 18 22:06:02 CEST 2019
+base.0=C\:\\programas\\flutter\\flutter_maps_prueba\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

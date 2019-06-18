@@ -44,7 +44,7 @@ class MapSampleState extends State<MapSample> {
               onMapCreated: _onMapCreated,
               initialCameraPosition: _initialPosition,
               myLocationEnabled: true,
-              markers: ,
+              //markers: ,
             ),
             Text('esta parte'),
             Positioned(

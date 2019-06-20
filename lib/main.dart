@@ -25,10 +25,36 @@ class MapSampleState extends State<MapSample> {
       CameraPosition(target: LatLng(40.390392, -3.686711), zoom: 15.0);
   //Completer<GoogleMapController> _controller = Completer();
   GoogleMapController mapController;
+  //Map<MarkerId, Marker> markers = <MarkerId, Marker> {};
+  final Set<Marker> _markers = {};
+  LatLng _lastMapPosition = LatLng(40.390392, -3.686711);
+
+  void _onCameraMove(CameraPosition position) {
+    _lastMapPosition = position.target;
+  }
+
   void _onMapCreated(GoogleMapController controller) {
     //_controller.complete(controller);
     mapController = controller;
-    
+    //_markers.add(value)
+  }
+
+  void _onAddMarkerButtonPressed() {
+    setState(() {
+      _markers.add(Marker(
+        // This marker id can be anything that uniquely identifies each marker.
+        markerId: MarkerId(_lastMapPosition.toString()),
+        position: _lastMapPosition,
+        infoWindow: InfoWindow(
+          title: 'Titulo del marcador',
+          snippet: _lastMapPosition.toString(),
+        ),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
+        onTap:() {
+          print("MAPA" + _lastMapPosition.toString());
+        }
+      ));
+    });
   }
 
   @override
@@ -44,7 +70,8 @@ class MapSampleState extends State<MapSample> {
               onMapCreated: _onMapCreated,
               initialCameraPosition: _initialPosition,
               myLocationEnabled: true,
-              //markers: ,
+              markers: _markers,
+              onCameraMove: _onCameraMove,
             ),
             Text('esta parte'),
             Positioned(
@@ -57,13 +84,15 @@ class MapSampleState extends State<MapSample> {
           ],
         ),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        mapController.animateCamera(
-          CameraUpdate.newCameraPosition(
-            CameraPosition(
-                target: LatLng(37.4219999, -122.0862462), zoom: 20.0),
-          ),
-        );
+        _onAddMarkerButtonPressed();
+//        mapController.animateCamera(
+//          CameraUpdate.newCameraPosition(
+//            CameraPosition(
+//                target: LatLng(37.4219999, -122.0862462), zoom: 20.0),
+//          ),
+//        );
       }),
+
     );
   }
 }

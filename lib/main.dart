@@ -38,23 +38,38 @@ class MapSampleState extends State<MapSample> {
     mapController = controller;
     //_markers.add(value)
   }
-
+  void _showModalSheet(String texto) {
+    showModalBottomSheet(context: context, builder: (builder) {
+      return Container(
+        child: Text(texto),
+        padding: EdgeInsets.all(40.0),
+      );
+    });
+  }
   void _onAddMarkerButtonPressed() {
+    _addMarker(_lastMapPosition);
+  }
+  void _addMarker(LatLng latlong) {
     setState(() {
       _markers.add(Marker(
         // This marker id can be anything that uniquely identifies each marker.
-        markerId: MarkerId(_lastMapPosition.toString()),
-        position: _lastMapPosition,
-        infoWindow: InfoWindow(
-          title: 'Titulo del marcador',
-          snippet: _lastMapPosition.toString(),
-        ),
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
-        onTap:() {
-          print("MAPA" + _lastMapPosition.toString());
-        }
+          markerId: MarkerId(latlong.toString()),
+          position: latlong,
+          infoWindow: InfoWindow(
+            title: 'Titulo del marcador',
+            snippet: latlong.toString(),
+          ),
+          icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
+          onTap:() {
+            _showModalSheet(latlong.toString());
+            print("MAPA" + latlong.toString());
+          }
       ));
     });
+  }
+  void _onLongPress(LatLng latlong) {
+    print('LONGTAP' + latlong.toString());
+    _addMarker(latlong);
   }
 
   @override
@@ -72,6 +87,7 @@ class MapSampleState extends State<MapSample> {
               myLocationEnabled: true,
               markers: _markers,
               onCameraMove: _onCameraMove,
+              onLongPress: _onLongPress,
             ),
             Text('esta parte'),
             Positioned(

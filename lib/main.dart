@@ -23,10 +23,9 @@ class MapSample extends StatefulWidget {
 class MapSampleState extends State<MapSample> {
   CameraPosition _initialPosition =
       CameraPosition(target: LatLng(40.390392, -3.686711), zoom: 15.0);
-  //Completer<GoogleMapController> _controller = Completer();
   GoogleMapController mapController;
-  //Map<MarkerId, Marker> markers = <MarkerId, Marker> {};
-  final Set<Marker> _markers = {};
+  Map<MarkerId, Marker> _markers = <MarkerId, Marker> {};
+  //final Set<Marker> _markers = {};
   LatLng _lastMapPosition = LatLng(40.390392, -3.686711);
 
   void _onCameraMove(CameraPosition position) {
@@ -34,9 +33,7 @@ class MapSampleState extends State<MapSample> {
   }
 
   void _onMapCreated(GoogleMapController controller) {
-    //_controller.complete(controller);
     mapController = controller;
-    //_markers.add(value)
   }
   void _showModalSheet(String texto) {
     showModalBottomSheet(context: context, builder: (builder) {
@@ -46,13 +43,38 @@ class MapSampleState extends State<MapSample> {
       );
     });
   }
+  void _showDialog(String texto) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(texto),
+          content: Text("Alert Dialog body"),
+          actions: <Widget>[
+            FlatButton(
+              child: Text("Delete"),
+              onPressed: () {
+                _deleteMarker(texto);
+                Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              child: Text("Close"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
   void _onAddMarkerButtonPressed() {
     _addMarker(_lastMapPosition);
   }
   void _addMarker(LatLng latlong) {
     setState(() {
-      _markers.add(Marker(
-        // This marker id can be anything that uniquely identifies each marker.
+      _markers[MarkerId(latlong.toString())] = (Marker(
           markerId: MarkerId(latlong.toString()),
           position: latlong,
           infoWindow: InfoWindow(
@@ -61,10 +83,18 @@ class MapSampleState extends State<MapSample> {
           ),
           icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
           onTap:() {
-            _showModalSheet(latlong.toString());
+            //_showModalSheet(latlong.toString());
+            _showDialog(latlong.toString());
             print("MAPA" + latlong.toString());
           }
       ));
+    });
+  }
+
+  void _deleteMarker(String idString) {
+    MarkerId id = MarkerId(idString);
+    setState(() {
+      _markers.remove(id);
     });
   }
   void _onLongPress(LatLng latlong) {
@@ -85,18 +115,10 @@ class MapSampleState extends State<MapSample> {
               onMapCreated: _onMapCreated,
               initialCameraPosition: _initialPosition,
               myLocationEnabled: true,
-              markers: _markers,
+              markers: Set<Marker>.of(_markers.values),
               onCameraMove: _onCameraMove,
               onLongPress: _onLongPress,
-            ),
-            Text('esta parte'),
-            Positioned(
-              bottom: 16,
-              left: 16,
-              right: 16,
-              child: Text('hola mundo'),
-            ),
-
+            )
           ],
         ),
       floatingActionButton: FloatingActionButton(onPressed: () {

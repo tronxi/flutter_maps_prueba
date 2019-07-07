@@ -5,10 +5,18 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5a276885-8f72-47ce-a18b-dbbbb29038fd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -25,29 +33,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+            <state relative-caret-position="190">
+              <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -62,14 +52,16 @@
       <list>
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/android/gradle.properties" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -128,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561229256077</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="delte marker with dialog">
+      <created>1561279686265</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561279686266</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -144,25 +143,25 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.30163446" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30134228" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="Build Variants" order="5" side_tool="true" />
-      <window_info id="Resources Explorer" order="6" weight="0.32986626" />
+      <window_info id="Resources Explorer" order="6" weight="0.3295302" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32647058" />
       <window_info anchor="bottom" id="Run" order="1" weight="0.32647058" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32886904" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="4" />
+      <window_info anchor="bottom" id="Logcat" order="4" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.22470239" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.72794116" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.325" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32352942" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32899868" />
       <window_info anchor="bottom" id="Find" order="11" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -177,19 +176,10 @@
     <MESSAGE value="eliminado error markers" />
     <MESSAGE value="add markers" />
     <MESSAGE value="add markers with long press" />
-    <option name="LAST_COMMIT_MESSAGE" value="add markers with long press" />
+    <MESSAGE value="delte marker with dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="delte marker with dialog" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -197,10 +187,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/flutter/bin/cache/pkg/sky_engine/lib/core/list.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="519" column="7" selection-start-line="519" selection-start-column="7" selection-end-line="519" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

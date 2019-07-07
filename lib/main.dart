@@ -25,6 +25,9 @@ class MapSampleState extends State<MapSample> {
       CameraPosition(target: LatLng(40.390392, -3.686711), zoom: 15.0);
   GoogleMapController mapController;
   Map<MarkerId, Marker> _markers = <MarkerId, Marker> {};
+
+  final Set<Polyline>_polyline={};
+  List<LatLng> listaLangLong = List();
   //final Set<Marker> _markers = {};
   LatLng _lastMapPosition = LatLng(40.390392, -3.686711);
 
@@ -95,13 +98,39 @@ class MapSampleState extends State<MapSample> {
     MarkerId id = MarkerId(idString);
     setState(() {
       _markers.remove(id);
+      _delteFromPolylineList(idString);
+    });
+  }
+
+  void _delteFromPolylineList(String idString) {
+    MarkerId id = MarkerId(idString);
+    String lat = id.value.split(',')[0].replaceAll('LatLng(', '');
+    String long = id.value.split(',')[1].replaceAll(')', '');
+
+    setState(() {
+      print("lat " + lat);
+      print("long " + long);
+      listaLangLong.remove(LatLng(double.parse(lat), double.parse(long)));
     });
   }
   void _onLongPress(LatLng latlong) {
     print('LONGTAP' + latlong.toString());
+    listaLangLong.add(latlong);
+    _addPolyline(latlong);
     _addMarker(latlong);
   }
 
+  void _addPolyline(LatLng latlong) {
+    setState(() {
+      _polyline.add(Polyline(
+        polylineId: PolylineId(_lastMapPosition.toString()),
+        visible: true,
+        points: listaLangLong,
+        //points: Set<Marker>.of(_markers.values).toList(true),
+        color: Colors.blue,
+      ));
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,6 +141,7 @@ class MapSampleState extends State<MapSample> {
         body: Stack(
           children: <Widget>[
             GoogleMap(
+              polylines: _polyline,
               onMapCreated: _onMapCreated,
               initialCameraPosition: _initialPosition,
               myLocationEnabled: true,
